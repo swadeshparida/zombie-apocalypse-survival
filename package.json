@@ -1,0 +1,10 @@
+{
+  "name": "zombie-apocalypse-survival",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Two-player online co-op zombie survival browser game",
+  "main": "server.js",
+  "scripts": {"start": "node server.js"},
+  "engines": {"node": ">=18"},
+  "dependencies": {"express": "^4.21.2", "socket.io": "^4.8.1"}
+}

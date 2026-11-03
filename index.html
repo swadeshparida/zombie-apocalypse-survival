@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name="theme-color" content="#080d0b"><title>Zombie Apocalypse: Survival</title><link rel="stylesheet" href="style.css"></head>
+<body><main id="app">
+  <section id="lobby" class="panel">
+    <div class="eyebrow">CO-OP SURVIVAL // SECTOR 09</div><h1>ZOMBIE <span>APOCALYPSE</span></h1><p class="subtitle">TWO SURVIVORS. TEN UNDEAD. ZERO SECOND CHANCES.</p>
+    <div class="lobby-card"><label for="playerName">CALLSIGN</label><input id="playerName" maxlength="16" value="Survivor" placeholder="Your name"><label for="roomCode">ROOM CODE</label><div class="code-row"><input id="roomCode" maxlength="6" placeholder="E.G. NIGHT7" autocomplete="off"><button id="randomCode" class="secondary">RANDOM</button></div><button id="joinBtn" class="primary">ENTER THE ZONE <span>→</span></button><p id="lobbyError" class="error"></p><div class="how"><b>HOW TO PLAY</b><p>Share your room code with one friend. Both players must join the same room. The battle begins when the second survivor arrives.</p></div></div>
+    <div class="features"><span>● 2 PLAYER ONLINE CO-OP</span><span>● 10 AI ZOMBIES</span><span>● PC + MOBILE</span></div>
+  </section>
+  <section id="game" class="hidden"><header class="hud"><div class="brand">ZA<span>:</span>S</div><div class="room-display">ROOM <b id="hudRoom">------</b></div><div class="objective">ELIMINATE ALL ZOMBIES</div><div class="zombie-count">UNDEAD <b id="zombieCount">10</b>/10</div><button id="leaveBtn" class="leave">EXIT ✕</button></header>
+    <div class="arena-wrap"><canvas id="arena" width="1600" height="900"></canvas><div id="waiting" class="overlay"><div class="spinner"></div><h2>WAITING FOR YOUR TEAMMATE</h2><p>Send them room code <b id="waitingCode"></b></p></div><div id="result" class="overlay hidden"><h2 id="resultTitle">MISSION COMPLETE</h2><p id="resultText"></p><button id="againBtn" class="primary">PLAY AGAIN ↻</button><button id="backBtn" class="secondary">BACK TO LOBBY</button></div><div id="toast" class="toast"></div>
+      <div class="mobile-controls"><div id="stick" class="stick"><div id="stickKnob"></div></div><div class="mobile-actions"><button id="reloadMobile">◎</button><button id="fireMobile">FIRE</button></div></div>
+    </div>
+    <footer class="bottom-hud"><div class="player-stat"><span class="dot blue"></span><div><small>YOU</small><b id="myHealth">100 HP</b></div><div class="health-track"><i id="myBar"></i></div><span class="kills" id="myKills">0 KILLS</span></div><div class="ammo">∞ <small>AMMO</small></div><div class="player-stat teammate"><span class="dot orange"></span><div><small>TEAMMATE</small><b id="mateHealth">WAITING</b></div><div class="health-track"><i id="mateBar"></i></div><span class="kills" id="mateKills">0 KILLS</span></div></footer>
+    <div class="desktop-help">WASD / ARROWS MOVE <span>•</span> MOUSE AIM <span>•</span> CLICK / SPACE SHOOT</div>
+  </section>
+</main><script src="/socket.io/socket.io.js"></script><script src="game.js"></script></body></html>
